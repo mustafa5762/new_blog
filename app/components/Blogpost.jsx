@@ -1,6 +1,22 @@
+import Markdown from 'markdown-to-jsx';
 import React from 'react'
 
-function Blogpost() {
+async function getData() {
+    const res = await fetch('https://sore-cyan-twill.cyclic.app/api/blogs');
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+   
+    // Recommendation: handle errors
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error('Failed to fetch data');
+    }
+   
+    return res.json();
+  }
+
+async function Blogpost() {
+    const data = await getData();
 
     const heartIcon = <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6">
     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
@@ -57,19 +73,20 @@ function Blogpost() {
                 </div>
 
                 <div className='max-w-3xl'>
-                    <h4 className="text-sm lg:text-lg text-neutral-700 mb-6 font-medium">Development & Programming</h4>
+                    <div className="flex space-x-3">
+                        <h4 className="text-sm text-indigo-700 mb-6 bg-indigo-100 px-2 py-1 rounded-md">Development</h4>
+                        <h4 className="text-sm text-red-700 mb-6 bg-red-100 px-2 py-1 rounded-md">Programming</h4>
+                    </div>
                     <h1 className="text-2xl leading-snug lg:text-[42px] lg:leading-[52px] font-bold text-neutral-900 tracking-tight">
-                    Mastering ReactJS: Essential Tips and Best Practices for Effective Web Development
+                    {data[0].title}
                     </h1>
                     <h3 className="text-lg lg:text-2xl text-neutral-700 mt-5 tracking-[-0.5px]">
-                    Level up your ReactJS skills with expert tips for powerful web development
+                    {data[0].title}
                     </h3>
                     <img className='bg-neutral-100 mt-10' src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*MwPJMsp7b5xQNpnpYc483Q.png" alt="" />
-                    <article className='mt-20'>
-                        <p>However, mastering React.js takes time and effort and can be challenging for beginners.</p>
-                        <p>In this article, we'll discuss 10 essential tips that will help you master React.js and become a more efficient developer. We'll provide examples for each tip so you can see how they work in action.</p>
-                        <p>The first and most important step to mastering React.js is to learn the basics. This includes understanding the concept of components, props, and state. Components are the building blocks of a React application, and <i>they can be thought</i> of as independent, reusable pieces of code. Props are properties that are passed down from a parent component to a child component, while state is an object that represents the internal state of a component.</p>
-                    </article>
+                    <div className="mt-20">
+                        <Markdown>{data[0].description}</Markdown>
+                    </div>
                 </div>
             </div>
         </div>
