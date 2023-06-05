@@ -40,10 +40,10 @@ async function Blogpost() {
   return (
     <div>
         <div className="mt-40 px-4 lg:px-[10vw]">
-            <div className="flex lg:space-x-14">
+            <div className="flex lg:space-x-20">
 
-                <div className="max-h-screen hidden lg:flex items-center">
-                    <div className="px-10 py-20 border-r border-neutral-300">
+                <div className="hidden">
+                    <div className="px-14 py-20 border-r border-neutral-300">
 
                         <div>
                             <div className="text-neutral-600">
@@ -72,22 +72,12 @@ async function Blogpost() {
                     </div>
                 </div>
 
-                <div className='max-w-3xl'>
-                    <div className="flex space-x-3">
-                        <h4 className="text-sm text-indigo-700 mb-6 bg-indigo-100 px-2 py-1 rounded-md">Development</h4>
-                        <h4 className="text-sm text-red-700 mb-6 bg-red-100 px-2 py-1 rounded-md">Programming</h4>
-                    </div>
-                    <h1 className="text-2xl leading-snug lg:text-[42px] lg:leading-[52px] font-bold text-neutral-900 tracking-tight">
-                    {data[0].title}
-                    </h1>
-                    <h3 className="text-lg lg:text-2xl text-neutral-700 mt-5 tracking-[-0.5px]">
-                    {data[0].title}
-                    </h3>
-                    <img className='bg-neutral-100 mt-10' src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*MwPJMsp7b5xQNpnpYc483Q.png" alt="" />
+                <article className='max-w-3xl prose prose-lg'>
+                    <img className='bg-neutral-100 mt-10' src="https://blog.logrocket.com/wp-content/uploads/2023/02/react-hooks-cheat-sheat-best-practices-examples-nocdn.png" alt="" />
                     <div className="mt-20">
                         <Markdown>{data[0].description}</Markdown>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
 
