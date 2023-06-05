@@ -73,9 +73,8 @@ async function Blogpost() {
                 </div>
 
                 <article className='max-w-3xl prose prose-lg'>
-                    <img className='bg-neutral-100 mt-10' src="https://blog.logrocket.com/wp-content/uploads/2023/02/react-hooks-cheat-sheat-best-practices-examples-nocdn.png" alt="" />
                     <div className="mt-20">
-                        <Markdown>{data[0].description}</Markdown>
+                        <Markdown>{data[1].description}</Markdown>
                     </div>
                 </article>
             </div>
