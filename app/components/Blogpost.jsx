@@ -1,5 +1,7 @@
 import Markdown from 'markdown-to-jsx';
 import React from 'react'
+import Code from './Code';
+
 
 async function getData() {
     const res = await fetch('https://sore-cyan-twill.cyclic.app/api/blogs');
@@ -20,15 +22,22 @@ async function Blogpost() {
 
   return (
     <div>
-        <div className="mt-40">
-            <div className="flex justify-center">
-                <article className='prose prose-xl prose-p:text-neutral-800'>
-                    <Markdown>{data[1].description}</Markdown>
-                </article>
-            </div>
+      <div className="p-32 flex justify-center items-center">
+        <div className='max-w-3xl'>
+          <Markdown
+            className="prose prose-xl prose-neutral"
+            options={{
+              overrides: {
+                Code: {
+                  component: Code
+                }
+              }
+            }}
+          >
+            {data[1].description}
+          </Markdown>
         </div>
-
-        <div className="h-screen"></div>
+      </div>
     </div>
   )
 }
