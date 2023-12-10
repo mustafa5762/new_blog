@@ -3,12 +3,90 @@
 @tailwind utilities;
 
 
+@font-face {
+    font-family: 'Founders Grotesk';
+    src: url('fonts/test-founders-grotesk-regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Founders Grotesk';
+    src: url('fonts/test-founders-grotesk-regular-italic.woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Founders Grotesk';
+    src: url('fonts/test-founders-grotesk-medium.woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Founders Grotesk';
+    src: url('fonts/test-founders-grotesk-medium-italic.woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Founders Grotesk';
+    src: url('fonts/test-founders-grotesk-semibold.woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Founders Grotesk';
+    src: url('fonts/test-founders-grotesk-semibold-italic.woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Founders Grotesk';
+    src: url('fonts/test-founders-grotesk-bold.woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Founders Grotesk';
+    src: url('fonts/test-founders-grotesk-bold-italic.woff2');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Domaine Sans';
+    src: url('fonts/test-domaine-text-regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Domaine Sans';
+    src: url('fonts/test-domaine-text-regular-italic.woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Domaine Sans';
+    src: url('fonts/test-domaine-text-medium.woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Domaine Sans';
+    src: url('fonts/test-domaine-text-medium-italic.woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+
+
+
+
 body {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Domaine Sans', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: 'Cabinet Grotesk';
+    font-family: 'Founders Grotesk';
 }
 .fullscreen-enabled {
     background-color: #282A36;

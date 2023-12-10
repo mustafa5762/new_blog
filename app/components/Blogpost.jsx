@@ -21,11 +21,11 @@ async function Blogpost() {
   const data = await getData();
 
   return (
-    <div>
-      <div className="p-32 flex justify-center items-center">
+    <div className='p-[3vw]'>
+      <div className="flex justify-center items-center">
         <div className='max-w-3xl'>
           <Markdown
-            className="prose prose-xl prose-neutral"
+            className="prose xl:prose-xl prose-p:text-black prose-a:text-lime-600"
             options={{
               overrides: {
                 Code: {
